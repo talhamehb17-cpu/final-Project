@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Nighthowls</title>
+    <meta name="description" content="Browse premium products at Nighthowls. Filter by category, price, and discover new arrivals.">
+    <meta name="keywords" content="Nighthowls products, fashion, accessories, electronics, home and living">
+    <meta property="og:title" content="Products - Nighthowls">
+    <meta property="og:description" content="Browse premium products at Nighthowls.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (Same as index.html) -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Nighthowls logo" loading="eager">
+                    <span>NIGHTHOWLS</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links" >
+                <li><a href="main.html" >Home</a></li>
+                <li><a href="product.html"class="active">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count">0</span>
+                </a></li>
+            </ul>
+            
+            <!-- Right side icons -->
+            <div class="nav-icons">
+                <div class="user-icon-wrapper">
+                    <i class="fas fa-user user-icon"></i>
+                    <div class="user-dropdown">
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="login.html?action=signup" class="signup-btn">Sign Up</a>
+                    </div>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="main.html" >Home</a></li>
+                <li><a href="product.html"class="active">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count-mobile">0</span>
+                </a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="login.html?action=signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h1>Our Products</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products..." id="searchInput">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="products-container">
+                <!-- Sidebar Filters -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label><input type="checkbox" value="fashion"> Fashion</label>
+                            <label><input type="checkbox" value="home"> Home & Living</label>
+                            <label><input type="checkbox" value="accessories"> Accessories</label>
+                            <label><input type="checkbox" value="electronics"> Electronics</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="range" min="0" max="1000" value="1000" id="priceSlider">
+                            <div class="price-values">
+                                <span>PKR (Rs.) 0</span>
+                                <span>PKR (Rs.) 1000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Sort By</h3>
+                        <select id="sortSelect">
+                            <option value="default">Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn-primary" id="applyFilters">Apply Filters</button>
+                    <button class="btn-secondary" id="resetFilters">Reset</button>
+                </aside>
+                
+                <!-- Products Grid -->
+                <div class="products-grid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <!-- Copy footer from index.html -->
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/product.js"></script>
+</body>
+</html>

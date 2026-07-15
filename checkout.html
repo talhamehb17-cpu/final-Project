@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Nighthowls</title>
+    <meta name="description" content="Secure checkout at Nighthowls. Complete your order and get delivery ETA: 7 days (1 week).">
+    <meta name="keywords" content="Nighthowls checkout, cash on delivery, order confirmation">
+    <meta property="og:title" content="Checkout - Nighthowls">
+    <meta property="og:description" content="Secure checkout with delivery ETA: 7 days (1 week).">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Nighthowls Logo">
+                        <span>NIGHTHOWLS</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-links">
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="wishlist.html">
+                        <i class="fas fa-heart"></i> Wishlist
+                        <span class="wishlist-count">0</span>
+                    </a></li>
+                </ul>
+                
+                <!-- Right side icons -->
+                <div class="nav-icons">
+                    <div class="user-icon-wrapper">
+                        <i class="fas fa-user user-icon"></i>
+                        <div class="user-dropdown">
+                            <a href="login.html" class="login-btn">Login</a>
+                            <a href="login.html?action=signup" class="signup-btn">Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="wishlist.html">
+                        <i class="fas fa-heart"></i> Wishlist
+                        <span class="wishlist-count-mobile">0</span>
+                    </a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login.html?action=signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-header">
+                <h1 class="page-title">Checkout</h1>
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <span class="step-number">1</span>
+                        <span class="step-label">Cart</span>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step active">
+                        <span class="step-number">2</span>
+                        <span class="step-label">Information</span>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span class="step-label">Payment</span>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <span class="step-label">Confirmation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="checkout-container">
+                <!-- Left Column: Forms -->
+                <div class="checkout-forms">
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-user"></i> Contact Information</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Shipping Address -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-shipping-fast"></i> Shipping Address</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" placeholder="e.g., Lahore" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="town">Town / Area *</label>
+                                <input type="text" id="town" placeholder="e.g., Gulberg" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="street">Street *</label>
+                                <input type="text" id="street" placeholder="Street name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseNumber">House / Apartment No. *</label>
+                                <input type="text" id="houseNumber" placeholder="House / Apartment number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address2">Additional Address Details (optional)</label>
+                            <input type="text" id="address2" placeholder="Floor, near landmark, etc.">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" value="Pakistan" disabled>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="saveAddress">
+                            <label for="saveAddress">Save this address for future orders</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Method -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-money-bill-wave"></i> Payment Method</h2>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" id="cod" name="paymentMethod" value="COD" checked>
+                                <label for="cod">
+                                    <i class="fas fa-truck"></i>
+                                    <span>Cash on Delivery (COD)</span>
+                                </label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="easypaisa" name="paymentMethod" value="EasyPaisa">
+                                <label for="easypaisa">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>EasyPaisa (Online Payment)</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-info" style="margin-top:12px;">
+                            <div class="info-message" id="codInfo">
+                                <i class="fas fa-truck"></i>
+                                <p>Pay when your order arrives. COD available for Pakistan only.</p>
+                            </div>
+                            <div class="info-message" id="easypaisaInfo" style="display:none;">
+                                <i class="fas fa-mobile-alt"></i>
+                                <p>Send payment to the EasyPaisa number below and upload your payment screenshot.</p>
+                                <p style="margin-top:8px; font-weight:600; font-size:1.1rem;">+92 336 4150179</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Screenshot Upload (only for EasyPaisa) -->
+                        <div class="form-group" id="screenshotUploadGroup" style="display:none; margin-top:20px;">
+                            <label for="paymentScreenshot">Payment Screenshot *</label>
+                            <input type="file" id="paymentScreenshot" accept="image/*" required>
+                            <small style="color:var(--medium-gray);">Please upload a clear screenshot of your payment transaction.</small>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Notes -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-sticky-note"></i> Order Notes (Optional)</h2>
+                        <div class="form-group">
+                            <textarea id="orderNotes" rows="4" placeholder="Special instructions for delivery"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h2>Order Summary</h2>
+                        
+                        <div class="order-items" id="orderItems">
+                            <!-- Order items will be loaded here -->
+                        </div>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span class="subtotal">PKR (Rs.) 0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span class="shipping">PKR (Rs.) 100.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax</span>
+                                <span class="tax">PKR (Rs.) 0.00</span>
+                            </div>
+                            <div class="summary-row discount" id="discountRow" style="display: flex;">
+                                <span>Discount (3%)</span>
+                                <span class="discount-amount">-PKR (Rs.) 0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span class="total-amount">PKR (Rs.) 0.00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="coupon-section">
+                            <input type="text" id="promoCodeInput" placeholder="Promo code">
+                            <button type="button" class="btn-secondary" id="applyPromoBtn">Apply</button>
+                        </div>
+                        <div id="promoMessage" class="promo-message"></div>
+                        
+                        <div class="shipping-info">
+                            <h3><i class="fas fa-truck"></i> Shipping Information</h3>
+                            <p>ETA: 7 days (1 week)</p>
+                        </div>
+                        
+                        <div class="return-policy">
+                            <h3><i class="fas fa-undo"></i> Return Policy</h3>
+                            <p>30-day return policy. Items must be in original condition with tags attached.</p>
+                        </div>
+                        
+                        <div class="terms-agreement">
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <label for="agreeTerms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> *</label>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn-primary place-order-btn" id="placeOrderBtn">
+                            <i class="fas fa-lock"></i> Place Order
+                        </button>
+                        <div id="placeOrderLoading" style="display:none; margin-top:10px; color: var(--medium-gray); font-size:0.95rem;">
+                            <i class="fas fa-spinner fa-spin"></i> Processing your order...
+                        </div>
+                        
+                        <div class="secure-checkout">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure checkout</span>
+                            <p>Your payment information is encrypted and secure</p>
+                        </div>
+                    </div>
+                    
+                    <div class="back-to-cart">
+                        <a href="cart.html">
+                            <i class="fas fa-arrow-left"></i> Back to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Nighthowls Logo">
+                        <span>NIGHTHOWLS</span>
+                    </div>
+                    <p>Premium products for those who appreciate quality, style, and the beauty of the night.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nighthowls. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Success Modal -->
+    <div class="modal" id="orderSuccessModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Order Placed Successfully!</h2>
+                <p>Thank you for your purchase. Your order has been confirmed.</p>
+                <div class="order-details">
+                    <p><strong>Order ID:</strong> <span id="orderId">NH-2023-00123</span></p>
+                    <p><strong>Estimated Delivery:</strong> <span id="deliveryDate">ETA: 7 days (1 week)</span></p>
+                    <p id="promoCodeDetail" style="display: none;"><strong>Promo Code:</strong> <span id="appliedPromoCode"></span></p>
+                    <p><strong>Total Amount:</strong> <span id="orderTotal">PKR (Rs.) 0.00</span></p>
+                </div>
+                <p>A confirmation email has been sent to your email address.</p>
+                <div class="modal-actions" style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+                    <div style="display: flex; gap: 10px; width: 100%;">
+                        <a href="index.html" class="btn-primary" style="flex: 1; text-align: center;">Continue Shopping</a>
+                        <a href="orders.html" class="btn-secondary" style="flex: 1; text-align: center;">View Order Details</a>
+                    </div>
+                    <button type="button" class="btn-primary" id="downloadInvoiceBtn" style="width: 100%; display: none; justify-content: center; align-items: center; gap: 8px;">
+                        <i class="fas fa-file-pdf"></i> Download Invoice
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="/js/invoice-helper.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/checkout.js"></script>
+</body>
+</html>

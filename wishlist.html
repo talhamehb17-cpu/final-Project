@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - Nighthowls</title>
+    <meta name="description" content="Save your favorite items and shop later with the Nighthowls wishlist.">
+    <meta name="keywords" content="Nighthowls wishlist, saved items, favorites">
+    <meta property="og:title" content="Wishlist - Nighthowls">
+    <meta property="og:description" content="Save your favorite items and shop later.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (Copy from above) -->
+    <nav class="navbar">
+    <div class="container">
+        <div class="nav-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="main.html">
+                    <img src="images/logo.png" alt="Nighthowls logo" loading="eager">
+                    <span>NIGHTHOWLS</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links" >
+                <li><a href="main.html">Home</a></li>
+                <li><a href="product.html" >Products</a></li>
+                <li><a href="cart.html" >Cart</a></li>
+                <li><a href="wishlist.html" class="active">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count">0</span>
+                </a></li>
+            </ul>
+            
+            <!-- Right side icons -->
+            <div class="nav-icons">
+                <div class="user-icon-wrapper">
+                    <i class="fas fa-user user-icon"></i>
+                    <div class="user-dropdown">
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="login.html?action=signup" class="signup-btn">Sign Up</a>
+                    </div>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="main.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html" class="active">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count-mobile">0</span>
+                </a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="login.html?action=signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Wishlist Section -->
+    <section class="wishlist-section">
+        <div class="container">
+            <h1 class="page-title">Your Wishlist</h1>
+            
+            <div class="wishlist-container">
+                <div class="wishlist-header">
+                    <h2>Saved Items (<span id="wishlistCount">0</span>)</h2>
+                    <button class="clear-wishlist" id="clearWishlist">Clear All</button>
+                </div>
+                
+                <div class="wishlist-grid" id="wishlistItems">
+                    <!-- Wishlist items will be loaded here dynamically -->
+                </div>
+                
+                <!-- Empty Wishlist Message -->
+                <div class="empty-wishlist" id="emptyWishlist" style="display: none;">
+                    <i class="fas fa-heart"></i>
+                    <h3>Your wishlist is empty</h3>
+                    <p>Save your favorite items here to purchase later</p>
+                    <a href="product.html" class="btn-primary">Browse Products</a>
+                </div>
+                
+                <!-- Move All to Cart Button -->
+                <div class="wishlist-actions" id="wishlistActions" style="display: none;">
+                    <button class="btn-primary move-all-cart" id="moveAllToCart">
+                        <i class="fas fa-shopping-cart"></i> Move All to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Copy from index.html) -->
+    <footer class="footer">
+        <!-- Copy footer from index.html -->
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/wishlist.js"></script>
+</body>
+</html>

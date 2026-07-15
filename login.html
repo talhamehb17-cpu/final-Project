@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup - Nighthowls</title>
+    <meta name="description" content="Login or create an account to shop, save items to wishlist, and manage your orders on Nighthowls.">
+    <meta name="keywords" content="Nighthowls login, signup, account, orders, wishlist">
+    <meta property="og:title" content="Login - Nighthowls">
+    <meta property="og:description" content="Login or sign up to shop and manage orders.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (Copy from above) -->
+   <nav class="navbar">
+    <div class="container">
+        <div class="nav-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Nighthowls logo" loading="eager">
+                    <span>NIGHTHOWLS</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links" >
+                <li><a href="main.html" >Home</a></li>
+                <li><a href="product.html" >Products</a></li>
+                <li><a href="cart.html" >Cart</a></li>
+                <li><a href="wishlist.html" >
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count">0</span>
+                </a></li>
+            </ul>
+            
+            <!-- Right side icons -->
+            <div class="nav-icons">
+                <div class="user-icon-wrapper">
+                    <i class="fas fa-user user-icon"></i>
+                    <div class="user-dropdown">
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="login.html?action=signup" class="signup-btn">Sign Up</a>
+                    </div>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="main.html" >Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count-mobile">0</span>
+                </a></li>
+                <li><a href="login.html"class="active">Login</a></li>
+                <li><a href="login.html?action=signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Login/Signup Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <!-- Toggle Buttons -->
+                <div class="auth-toggle">
+                    <button class="toggle-btn active" id="loginToggle">Login</button>
+                    <button class="toggle-btn" id="signupToggle">Sign Up</button>
+                </div>
+                
+                <!-- Login Form -->
+                <div class="auth-form active" id="loginForm">
+                    <h2>Welcome Back</h2>
+                    <p>Login to your Nighthowls account</p>
+                    
+                    <form id="loginFormElement">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <div class="password-input">
+                                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="remember-me">
+                                <input type="checkbox" id="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary auth-btn">Login</button>
+                        
+                        <div class="divider">
+                            <span>Or continue with</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+                        
+                        <p class="auth-redirect">
+                            Don't have an account? <a href="#" class="switch-to-signup">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+                
+                <!-- Signup Form -->
+                <div class="auth-form" id="signupForm">
+                    <h2>Create Account</h2>
+                    <p>Join Nighthowls for exclusive benefits</p>
+                    
+                    <form id="signupFormElement">
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <input type="text" id="signupName" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signupEmail">Email Address</label>
+                            <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <div class="password-input">
+                                <input type="password" id="signupPassword" placeholder="Create a password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="password-input">
+                                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="terms-agree">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary auth-btn">Create Account</button>
+                        
+                        <div class="divider">
+                            <span>Or sign up with</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-btn google">
+                                <i class="fab fa-google"></i> Google
+                            </button>
+                            <button type="button" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </button>
+                        </div>
+                        
+                        <p class="auth-redirect">
+                            Already have an account? <a href="#" class="switch-to-login">Login</a>
+                        </p>
+                    </form>
+                </div>
+                <!-- OTP Input (hidden initially) -->
+<div class="form-group" id="otpGroup" style="display:none;">
+    <label for="signupOTP">Enter OTP</label>
+    <input type="text" id="signupOTP" placeholder="Enter OTP" maxlength="6">
+    <button type="button" id="verifyOtpBtn" class="btn-primary" style="margin-top:10px;">Verify OTP</button>
+    <p id="resendOtpText" style="margin-top:8px; font-size:0.85rem; color:#555;">
+        Didn't receive OTP? <button type="button" id="resendOtpBtn" style="background:none; border:none; color:#1e88e5; cursor:pointer;">Resend</button>
+    </p>
+</div>
+
+<!-- Loading Spinner -->
+<div id="signupLoading" style="display:none; margin-top:15px;">
+    <i class="fas fa-spinner fa-spin"></i> Sending OTP...
+</div>
+
+                
+                <!-- Benefits Section -->
+                <div class="auth-benefits">
+                    <h3>Benefits of Joining Nighthowls</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Exclusive member-only discounts</li>
+                        <li><i class="fas fa-check-circle"></i> Early access to new products</li>
+                        <li><i class="fas fa-check-circle"></i> Free shipping on orders over PKR (Rs.) 100</li>
+                        <li><i class="fas fa-check-circle"></i> Personalized recommendations</li>
+                        <li><i class="fas fa-check-circle"></i> Easy order tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Priority customer support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Copy from index.html) -->
+    <footer class="footer">
+        <!-- Copy footer from index.html -->
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

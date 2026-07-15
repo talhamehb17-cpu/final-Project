@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Nighthowls</title>
+    <meta name="description" content="Review items in your cart and proceed to secure checkout.">
+    <meta name="keywords" content="Nighthowls cart, shopping cart, checkout">
+    <meta property="og:title" content="Cart - Nighthowls">
+    <meta property="og:description" content="Review items in your cart and checkout securely.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar (Copy from above) -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Nighthowls logo" loading="eager">
+                    <span>NIGHTHOWLS</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links" >
+                <li><a href="main.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="cart.html"  class="active">Cart</a></li>
+                <li><a href="wishlist.html">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count">0</span>
+                </a></li>
+            </ul>
+            
+            <!-- Right side icons -->
+            <div class="nav-icons">
+                <div class="user-icon-wrapper">
+                    <i class="fas fa-user user-icon"  class="active"></i>
+                    <div class="user-dropdown">
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="login.html?action=signup" class="signup-btn">Sign Up</a>
+                    </div>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="main.html" class="active">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count-mobile">0</span>
+                </a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="login.html?action=signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <h1 class="page-title">Your Shopping Cart</h1>
+            
+            <div class="cart-container">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <h2>Items (0)</h2>
+                        <button class="clear-cart" id="clearCart">Clear Cart</button>
+                    </div>
+                    
+                    <div class="cart-items-list" id="cartItems">
+                        <!-- Cart items will be loaded here dynamically -->
+                    </div>
+                </div>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span class="subtotal">PKR (Rs.) 0.00</span>
+                        </div>
+                        <div class="summary-row discount" id="discountRow" style="display: flex;">
+                            <span>Discount (3%)</span>
+                            <span class="discount-amount">-PKR (Rs.) 0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span class="shipping">PKR (Rs.) 100.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax</span>
+                            <span class="tax">PKR (Rs.) 0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span class="total-amount">PKR (Rs.) 0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="coupon-section">
+                        <input type="text" placeholder="Enter promo code" id="promoCodeInput">
+                        <button class="btn-secondary" id="applyPromoBtn">Apply</button>
+                    </div>
+                    <div id="promoMessage" class="promo-message"></div>
+                    
+                    <a href="checkout.html" class="btn-primary checkout-btn">Proceed to Checkout</a>
+                    
+                    <div class="continue-shopping">
+                        <a href="product.html">
+                            <i class="fas fa-arrow-left"></i> Continue Shopping
+                        </a>
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <p>Secure Payment</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-apple-pay"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Copy from index.html) -->
+    <footer class="footer">
+        <!-- Copy footer from index.html -->
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html>

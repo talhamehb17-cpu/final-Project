@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nighthowls - Premium Shopping Experience</title>
+    <meta name="description" content="Shop Nighthowls for premium fashion, home & living, accessories, and electronics. Modern products, secure checkout, and fast delivery.">
+    <meta name="keywords" content="Nighthowls, online store, fashion, accessories, electronics, home and living, premium products">
+    <meta property="og:title" content="Nighthowls - Premium Shopping Experience">
+    <meta property="og:description" content="Premium products for those who appreciate quality and style.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/logo.png">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+<!-- Updated Navbar Section (replace in all HTML files) -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-content">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/images/logo.png" alt="Nighthowls logo" loading="eager">
+                    <span>NIGHTHOWLS</span>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-links" >
+                <li><a href="main.html" class="active">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count">0</span>
+                </a></li>
+            </ul>
+            
+            <!-- Right side icons -->
+            <div class="nav-icons">
+                <div class="user-icon-wrapper">
+                    <i class="fas fa-user user-icon"></i>
+                    <div class="user-dropdown">
+                        <a href="login.html" class="login-btn">Login</a>
+                        <a href="login.html?action=signup" class="signup-btn">Sign Up</a>
+                    </div>
+                </div>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="wishlist.html">
+                    <i class="fas fa-heart"></i> Wishlist
+                    <span class="wishlist-count-mobile">0</span>
+                </a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="login.html?action=signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-slider" aria-label="Featured promotions">
+        <div class="hero-slides" id="heroSlides">
+            <div class="hero-slide hero-slide-1 active">
+                <img src="/images/pexels-bohlemedia-1884579.jpg" alt="Premium collection" loading="eager" fetchpriority="high">
+                <div class="hero-content-wrapper">
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">NEW COLLECTION 2024</span>
+                            <h1 class="hero-title">Night Never Looked So Good</h1>
+                            <p class="hero-description">Premium products for those who appreciate quality and style</p>
+                            <div class="discount-banner">
+                                <span>20% OFF</span> on all new arrivals
+                            </div>
+                            <div class="hero-buttons">
+                                <a href="product.html" class="btn-primary hero-btn-slide1">Shop Now</a>
+                                <a href="product.html" class="btn-secondary hero-btn-slide1">Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide hero-slide-2">
+                <img src="/images/pexels-bohlemedia-1884584.jpg" alt="New arrivals" loading="lazy" fetchpriority="low">
+                <div class="hero-content-wrapper">
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">LIMITED EDITION</span>
+                            <h1 class="hero-title">Exclusive Drops</h1>
+                            <p class="hero-description">Be the first to own our exclusive limited edition pieces</p>
+                            <div class="discount-banner">
+                                <span>15% OFF</span> limited time offer
+                            </div>
+                            <div class="hero-buttons">
+                                <a href="product.html" class="btn-primary hero-btn-slide2">Shop Now</a>
+                                <a href="product.html" class="btn-secondary hero-btn-slide2">View Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide hero-slide-3">
+                <img src="/images/fashion2.jpg" alt="Limited edition drop" loading="lazy" fetchpriority="low">
+                <div class="hero-content-wrapper">
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">PREMIUM QUALITY</span>
+                            <h1 class="hero-title">Elevate Your Style</h1>
+                            <p class="hero-description">Discover our exclusive collection designed for the modern individual</p>
+                            <div class="discount-banner">
+                                <span>FREE SHIPPING</span> on orders over PKR 5,000
+                            </div>
+                            <div class="hero-buttons">
+                                <a href="product.html" class="btn-primary hero-btn-slide3">Shop Now</a>
+                                <a href="product.html" class="btn-secondary hero-btn-slide3">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="hero-nav hero-prev" type="button" aria-label="Previous slide" id="heroPrev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="hero-nav hero-next" type="button" aria-label="Next slide" id="heroNext">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="hero-dots" id="heroDots" aria-label="Hero slide controls"></div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">BROWSE COLLECTIONS</span>
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-description">Discover our curated collections across premium categories</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="fashion">
+                    <div class="category-image fashion"></div>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3>Fashion</h3>
+                            <p>120+ Products</p>
+                            <a href="product.html?category=fashion" class="category-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="home">
+                    <div class="category-image home"></div>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3>Home & Living</h3>
+                            <p>85+ Products</p>
+                            <a href="product.html?category=home" class="category-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="accessories">
+                    <div class="category-image accessories"></div>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3>Accessories</h3>
+                            <p>95+ Products</p>
+                            <a href="product.html?category=accessories" class="category-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-card" data-category="electronics">
+                    <div class="category-image electronics"></div>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3>Electronics</h3>
+                            <p>60+ Products</p>
+                            <a href="product.html?category=electronics" class="category-btn">Explore <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">TRENDING NOW</span>
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-description">Handpicked premium products just for you</p>
+            </div>
+            <div class="products-grid" id="featuredProductsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+            <div class="section-cta">
+                <a href="product.html" class="btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-content">
+                <span class="promo-tag">LIMITED TIME OFFER</span>
+                <h2 class="promo-title">Get 20% Off Your First Order</h2>
+                <p class="promo-description">Use code NIGHTHOWLS20 at checkout</p>
+                <a href="product.html" class="btn-primary promo-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="highlight">
+        <div class="container">
+            <div class="highlight-item">
+                <div class="highlight-image">
+                    <!-- Image would be here -->
+                    <div class="image-placeholder">Premium Collection</div>
+                </div>
+                <div class="highlight-content">
+                    <h2>Elevate Your Night</h2>
+                    <p>Discover our exclusive collection designed for the modern individual. From luxurious fabrics to innovative designs, each piece tells a story of craftsmanship and attention to detail.</p>
+                    <p>Our products are sourced from ethical suppliers and crafted with sustainability in mind, ensuring you look good while doing good.</p>
+                    <a href="product.html" class="btn-secondary">Explore Collection</a>
+                </div>
+            </div>
+            
+            <div class="highlight-item reverse">
+                <div class="highlight-image1">
+                    <!-- Image would be here -->
+                    <div class="image-placeholder">Limited Edition</div>
+                </div>
+                <div class="highlight-content">
+                    <h2>Limited Edition Drops</h2>
+                    <p>Be the first to own our exclusive limited edition pieces. Each item is numbered and comes with a certificate of authenticity.</p>
+                    <p>Sign up for our newsletter to get early access to new drops and special promotions available only to Nighthowls members.</p>
+                    <a href="login.html?action=signup" class="btn-secondary">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section class="fixed">
+        <div class="pic">
+       
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">TESTIMONIALS</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-description">Real reviews from real customers who love our products</p>
+            </div>
+            
+            <!-- Reviews Carousel -->
+            <div class="reviews-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Reviews will be added here dynamically -->
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <button class="carousel-btn prev" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Night Street, Owl City</p>
+                    <p><i class="fas fa-phone"></i> +92 3364-150-179</p>
+                    <p><i class="fas fa-envelope"></i> info@nighthowls.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Customer Support</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Nighthowls Logo">
+                        <span>NIGHTHOWLS</span>
+                    </div>
+                    <p>Premium products for those who appreciate quality, style, and the beauty of the night.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="wishlist.html">Wishlist</a></li>
+                        <li><a href="admin-login.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Nighthowls. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

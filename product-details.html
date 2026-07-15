@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Nighthowls</title>
+    <meta name="description" content="View product details, images, and color variants. Add items to cart or wishlist at Nighthowls.">
+    <meta name="keywords" content="Nighthowls product details, product images, color variants, add to cart">
+    <meta property="og:title" content="Product Details - Nighthowls">
+    <meta property="og:description" content="View product images, color variants, and shop securely.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/product-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="main.html">
+                        <img src="images/logo.png" alt="Nighthowls logo" loading="eager">
+                        <span>NIGHTHOWLS</span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="wishlist.html">
+                        <i class="fas fa-heart"></i> Wishlist
+                        <span class="wishlist-count">0</span>
+                    </a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="user-icon-wrapper">
+                        <i class="fas fa-user user-icon"></i>
+                        <div class="user-dropdown">
+                            <a href="login.html" class="login-btn">Login</a>
+                            <a href="login.html?action=signup" class="signup-btn">Sign Up</a>
+                        </div>
+                    </div>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="wishlist.html">
+                        <i class="fas fa-heart"></i> Wishlist
+                        <span class="wishlist-count-mobile">0</span>
+                    </a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login.html?action=signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="product-details-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="main.html">Home</a> /
+                <a href="product.html">Products</a> /
+                <span id="breadcrumbName">Product</span>
+            </div>
+
+            <div class="product-details" id="productDetails">
+                <div class="loading">Loading product...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Optional: reuse footer from main.html -->
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/product-details.js"></script>
+</body>
+</html>
+
