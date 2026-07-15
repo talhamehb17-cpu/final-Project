@@ -103,7 +103,7 @@ loginFormElement.addEventListener('submit', async function(e) {
         showFormSuccess('loginForm', data.message);
         localStorage.setItem('nighthowls_user', JSON.stringify(data.user));
         if (data.token) localStorage.setItem('nighthowls_token', data.token);
-        setTimeout(()=>window.location.href='main.html',2000);
+        setTimeout(()=>window.location.href='index.html',2000);
     } catch(err){ showFormError('loginForm', err.message); }
 });
 
@@ -183,7 +183,7 @@ verifyOtpBtn.addEventListener('click', async function(){
         // update navbar immediately if loaded
         if (typeof window.updateNavbarUser === 'function') window.updateNavbarUser();
 
-        setTimeout(()=>window.location.href='main.html',800);
+        setTimeout(()=>window.location.href='index.html',800);
     } catch(err){
         showFormError('signupForm', err.message);
     } finally{

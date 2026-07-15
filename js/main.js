@@ -582,7 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
-    // ===== HERO SLIDER (main.html) =====
+    // ===== HERO SLIDER (index.html) =====
     const slidesRoot = document.getElementById('heroSlides');
     const dotsRoot = document.getElementById('heroDots');
     const prev = document.getElementById('heroPrev');
