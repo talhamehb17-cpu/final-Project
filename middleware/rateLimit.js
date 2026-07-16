@@ -8,8 +8,8 @@ const authLimiter = rateLimit({
     standardHeaders: true,
     legacyHeaders: false,
     skip: (req) => {
-        // Skip rate limiting for trusted IPs if needed
-        return false;
+        // Skip rate limiting in development mode or for loopback/localhost requests
+        return process.env.NODE_ENV === 'development' || req.ip === '127.0.0.1' || req.ip === '::1';
     }
 });
 

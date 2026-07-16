@@ -201,18 +201,9 @@
                         </p>
                     </form>
                 </div>
-                <!-- OTP Input (hidden initially) -->
-<div class="form-group" id="otpGroup" style="display:none;">
-    <label for="signupOTP">Enter OTP</label>
-    <input type="text" id="signupOTP" placeholder="Enter OTP" maxlength="6">
-    <button type="button" id="verifyOtpBtn" class="btn-primary" style="margin-top:10px;">Verify OTP</button>
-    <p id="resendOtpText" style="margin-top:8px; font-size:0.85rem; color:#555;">
-        Didn't receive OTP? <button type="button" id="resendOtpBtn" style="background:none; border:none; color:#1e88e5; cursor:pointer;">Resend</button>
-    </p>
-</div>
 
-<!-- Loading Spinner -->
-<div id="signupLoading" style="display:none; margin-top:15px;">
+                <!-- Loading Spinner -->
+<div id="signupLoading" style="display:none; margin-top:15px; color: var(--primary-black);">
     <i class="fas fa-spinner fa-spin"></i> Sending OTP...
 </div>
 
@@ -223,7 +214,7 @@
                     <ul>
                         <li><i class="fas fa-check-circle"></i> Exclusive member-only discounts</li>
                         <li><i class="fas fa-check-circle"></i> Early access to new products</li>
-                        <li><i class="fas fa-check-circle"></i> Free shipping on orders over PKR (Rs.) 100</li>
+                        <li><i class="fas fa-check-circle"></i> Free shipping on orders over PKR (Rs.) 5000</li>
                         <li><i class="fas fa-check-circle"></i> Personalized recommendations</li>
                         <li><i class="fas fa-check-circle"></i> Easy order tracking</li>
                         <li><i class="fas fa-check-circle"></i> Priority customer support</li>
@@ -237,6 +228,50 @@
     <footer class="footer">
         <!-- Copy footer from index.html -->
     </footer>
+
+    <!-- OTP Verification Modal -->
+    <div id="otpModal" class="otp-modal" style="display: none;">
+        <div class="otp-modal-content">
+            <div class="otp-modal-header">
+                <h2><i class="fas fa-shield-alt"></i> Verify Your Email</h2>
+                <button class="otp-modal-close" id="closeOtpModal">&times;</button>
+            </div>
+            <div class="otp-modal-body">
+                <!-- Sending Loader State -->
+                <div id="otpModalSending" style="display: none; padding: 20px 0;">
+                    <i class="fas fa-spinner fa-spin fa-3x" style="color: var(--accent-gold); margin-bottom: 15px;"></i>
+                    <p style="font-weight: 600; color: var(--primary-black); font-size: 1.1rem;">Sending verification OTP...</p>
+                    <p style="color: var(--medium-gray); font-size: 0.9rem; margin-top: 5px;">Please wait while we connect to the mail server.</p>
+                </div>
+                
+                <!-- Main OTP Form State -->
+                <div id="otpModalForm">
+                    <p class="otp-modal-description">
+                        We've sent a 6-digit OTP to <strong id="modalEmail"></strong>
+                    </p>
+                    <p class="otp-modal-subtitle">Please enter the OTP below to complete your registration.</p>
+                    
+                    <div class="otp-input-container">
+                        <input type="text" id="modalOtpInput" class="otp-input" placeholder="Enter 6-digit OTP" maxlength="6" autocomplete="off">
+                    </div>
+                    
+                    <div id="otpModalError" class="otp-modal-error" style="display: none;"></div>
+                    <div id="otpModalSuccess" class="otp-modal-success" style="display: none;"></div>
+                    
+                    <button type="button" id="verifyOtpBtn" class="btn-primary otp-verify-btn">
+                        <i class="fas fa-check-circle"></i> Verify OTP
+                    </button>
+                    
+                    <div class="otp-resend-section">
+                        <p>Didn't receive OTP?</p>
+                        <button type="button" id="resendOtpBtn" class="otp-resend-btn">
+                            <i class="fas fa-redo"></i> Resend OTP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="/js/main.js"></script>
     <script src="/js/login.js"></script>

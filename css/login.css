@@ -294,3 +294,239 @@
         font-size: 1rem;
     }
 }
+
+/* ==========================================
+   OTP MODAL STYLING
+   ========================================== */
+.otp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.otp-modal-content {
+    background-color: var(--primary-white, #ffffff);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 460px;
+    padding: 40px 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    position: relative;
+    animation: modalScaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+}
+
+@keyframes modalScaleIn {
+    from {
+        transform: scale(0.9) translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.otp-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.otp-modal-header h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--primary-black, #1a1a1a);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.otp-modal-header h2 i {
+    color: var(--accent-gold, #d4af37);
+}
+
+.otp-modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--medium-gray, #888);
+    cursor: pointer;
+    transition: var(--transition, all 0.2s);
+    line-height: 1;
+    padding: 0;
+}
+
+.otp-modal-close:hover {
+    color: var(--primary-black, #111);
+}
+
+.otp-modal-body {
+    text-align: center;
+}
+
+.otp-modal-description {
+    font-size: 0.98rem;
+    color: var(--dark-gray, #444);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.otp-modal-subtitle {
+    font-size: 0.88rem;
+    color: var(--medium-gray, #777);
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+.otp-input-container {
+    margin-bottom: 25px;
+}
+
+.otp-input {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px 15px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-align: center;
+    border: 2px solid var(--border-color, #dddddd);
+    border-radius: 10px;
+    transition: var(--transition, all 0.2s);
+    text-transform: uppercase;
+    font-family: monospace;
+}
+
+.otp-input:focus {
+    border-color: var(--accent-gold, #d4af37);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+    outline: none;
+}
+
+.otp-modal-error {
+    background-color: rgba(220, 53, 69, 0.08);
+    color: #dc3545;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    border: 1px solid rgba(220, 53, 69, 0.25);
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.otp-modal-success {
+    background-color: rgba(40, 167, 69, 0.08);
+    color: #28a745;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    border: 1px solid rgba(40, 167, 69, 0.25);
+    font-weight: 600;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.otp-verify-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: var(--primary-black, #111111);
+    color: var(--primary-white, #ffffff);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition, all 0.2s);
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.otp-verify-btn:hover {
+    background-color: var(--accent-gold, #d4af37);
+    color: var(--primary-black, #111111);
+}
+
+.otp-verify-btn:disabled {
+    background-color: var(--medium-gray, #cccccc);
+    color: var(--dark-gray, #666666);
+    cursor: not-allowed;
+}
+
+.otp-resend-section {
+    font-size: 0.88rem;
+    color: var(--medium-gray, #666);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.06));
+    padding-top: 20px;
+}
+
+.otp-resend-section p {
+    margin: 0;
+}
+
+.otp-resend-btn {
+    background: none;
+    border: none;
+    color: var(--accent-gold, #d4af37);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: var(--transition, all 0.2s);
+}
+
+.otp-resend-btn:hover {
+    color: var(--primary-black, #111111);
+    text-decoration: underline;
+}
+
+.otp-resend-btn:disabled {
+    color: var(--medium-gray, #999999);
+    cursor: not-allowed;
+}
+
+/* Mobile Responsiveness for Modal */
+@media (max-width: 576px) {
+    .otp-modal-content {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    .otp-modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .otp-input {
+        max-width: 220px;
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+    }
+}
