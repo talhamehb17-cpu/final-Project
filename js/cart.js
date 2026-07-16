@@ -200,11 +200,13 @@ async function applyPromoCode() {
         applyPromoBtn.disabled = true;
         applyPromoBtn.textContent = 'Validating...';
         
-        const response = await fetch('http://192.168.1.8:5000/api/promo-codes/validate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code })
-        });
+ const response = await fetch('https://final-project-production-13f4.up.railway.app/api/promo-codes/validate', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ code })
+});
         
         const data = await response.json();
         
