@@ -719,29 +719,17 @@ h3 {
    background-image: url(/images/pexels-bohlemedia-1884584.jpg);
 }
 
-.category-image.fashion:hover{
-    background-image: url(/images/pexels-bohlemedia-1884579.jpg);
-}
 
 .category-image.home {
     background-image: url(/images/categories/home.jpg);
 }
-.category-image.home:hover {
-    background-image: url(/images/categories/home1.jpg);
-}
 
 .category-image.accessories {
-    background-image: url(/images/categories/access.jpg);
-}
-.category-image.accessories:hover {
-    background-image: url(/images/categories/access2.jpg);
+    background-image: url(https://img.magnific.com/premium-photo/fashion-female-beach-accessories-yellow-muslin-cloth-belt-straw-bag-sunglasses-hat-sunglasses-aesthetic-luxury-boho-concept-travel-blog-social-media_408798-9567.jpg?semt=ais_hybrid&w=740&q=80);
 }
 
 .category-image.electronics {
   background-image: url(/images/categories/elec.jpg);
-}
-.category-image.electronics:hover {
-   background-image: url(/images/categories/elec1.jpg);
 }
 
 .category-overlay {
@@ -1519,15 +1507,19 @@ h3 {
     
     .highlight-item {
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
+        margin-bottom: 60px;
     }
     
     .highlight-item.reverse {
         flex-direction: column;
     }
     
-    .highlight-image {
-        height: 300px;
+    .highlight-image,
+    .highlight-image1 {
+        height: 350px;
+        width: 100%;
+        min-height: 350px;
     }
 }
 
@@ -1563,6 +1555,63 @@ h3 {
     .reviews-carousel {
         padding: 0 40px;
     }
+    
+    .highlight {
+        padding: 60px 0;
+    }
+    
+    .highlight-item {
+        flex-direction: column;
+        gap: 35px;
+        margin-bottom: 50px;
+    }
+    
+    .highlight-item.reverse {
+        flex-direction: column;
+    }
+    
+    .highlight-image,
+    .highlight-image1 {
+        height: 320px;
+        width: 100%;
+        min-height: 320px;
+        position: relative;
+    }
+    
+    .highlight-image::before,
+    .highlight-image1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+    
+    .image-placeholder {
+        position: relative;
+        z-index: 2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        padding-top: 120px;
+    }
+    
+    .highlight-content {
+        padding: 0 10px;
+    }
+    
+    .highlight-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+    
+    .highlight-content p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1580,6 +1629,49 @@ h3 {
     
     .categories-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .highlight {
+        padding: 50px 0;
+    }
+    
+    .highlight-item {
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .highlight-image,
+    .highlight-image1 {
+        height: 280px;
+        min-height: 280px;
+        position: relative;
+    }
+    
+    .highlight-image::before,
+    .highlight-image1::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+    
+    .image-placeholder {
+        position: relative;
+        z-index: 2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 1.2rem;
+    }
+    
+    .highlight-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .highlight-content p {
+        font-size: 0.95rem;
     }
     
     .review-form {
