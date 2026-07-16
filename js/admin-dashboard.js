@@ -1,5 +1,5 @@
 // Admin Dashboard JavaScript
-const API_BASE = 'http://localhost:5000/api/admin';
+const API_BASE = 'https://final-project-production-13f4.up.railway.app/api/admin';
 
 // Check authentication
 function checkAuth() {

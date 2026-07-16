@@ -22,7 +22,7 @@ let guestCart = JSON.parse(localStorage.getItem('nighthowls_cart')) || [];
 updateCartCount();
 
 // ===== API CONFIG =====
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://final-project-production-13f4.up.railway.app/api';
 window.API_BASE_URL = API_BASE_URL;
 function getAuthToken() {
     return localStorage.getItem('nighthowls_token');

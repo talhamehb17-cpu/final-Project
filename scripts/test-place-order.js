@@ -1,7 +1,7 @@
 require('dotenv').config({ override: true });
 
 async function main() {
-  const base = 'http://localhost:5000/api';
+  const base = 'https://final-project-production-13f4.up.railway.app/api';
   const password = 'testpass123';
   const email = `order_${Date.now()}@gmail.com`;
   const name = 'Order Test';

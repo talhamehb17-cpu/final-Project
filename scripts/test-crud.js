@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 async function testCRUD() {
-  const API_BASE = 'http://localhost:5000/api/admin';
+  const API_BASE = 'https://final-project-production-13f4.up.railway.app/api/admin';
   
   try {
     // 1. Login
@@ -130,7 +130,7 @@ async function testCRUD() {
     console.log('\n4. Testing Public APIs...');
     
     // Get Products
-    const publicProductsRes = await fetch('http://localhost:5000/api/products');
+    const publicProductsRes = await fetch('https://final-project-production-13f4.up.railway.app/api/products');
     const publicProductsText = await publicProductsRes.text();
     const publicProductsData = JSON.parse(publicProductsText);
     
@@ -139,7 +139,7 @@ async function testCRUD() {
       
       // Get Single Product
       if (publicProductsData.products?.length > 0) {
-        const singleProductRes = await fetch(`http://localhost:5000/api/products/${publicProductsData.products[0].id}`);
+        const singleProductRes = await fetch(`https://final-project-production-13f4.up.railway.app/api/products/${publicProductsData.products[0].id}`);
         const singleProductText = await singleProductRes.text();
         const singleProductData = JSON.parse(singleProductText);
         

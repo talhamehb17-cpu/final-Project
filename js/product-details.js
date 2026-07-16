@@ -76,7 +76,7 @@ async function loadProduct() {
       data = await window.nhApiRequest(`/products/${id}`);
     } else {
       // Fallback if global helper is not ready for some reason
-      const res = await fetch(`http://localhost:5000/api/products/${id}`);
+      const res = await fetch(`https://final-project-production-13f4.up.railway.app/api/products/${id}`);
       data = await res.json();
       if (!res.ok) {
         throw new Error(data?.message || 'Failed to load product');

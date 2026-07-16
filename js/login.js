@@ -93,7 +93,7 @@ loginFormElement.addEventListener('submit', async function(e) {
     if (password.length<6){ showFormError('loginForm','Password must be 6+ chars'); return; }
 
     try {
-        const res = await fetch('http://localhost:5000/api/auth/login',{
+        const res = await fetch('https://final-project-production-13f4.up.railway.app/api/auth/login',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email,password})
@@ -127,7 +127,7 @@ signupFormElement.addEventListener('submit', async function(e) {
         signupLoading.style.display='block';
         signupFormElement.querySelectorAll('input,button').forEach(el=>el.disabled=true);
 
-        const res = await fetch('http://localhost:5000/api/auth/signup',{
+        const res = await fetch('https://final-project-production-13f4.up.railway.app/api/auth/signup',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({name,email,password})
@@ -160,7 +160,7 @@ verifyOtpBtn.addEventListener('click', async function(){
         const email = document.getElementById('signupEmail').value.trim();
         const name = document.getElementById('signupName').value.trim();
         const password = document.getElementById('signupPassword').value.trim();
-        const res = await fetch('http://localhost:5000/api/auth/verify-otp',{
+        const res = await fetch('https://final-project-production-13f4.up.railway.app/api/auth/verify-otp',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({email, otp})
@@ -169,7 +169,7 @@ verifyOtpBtn.addEventListener('click', async function(){
         if(!res.ok) throw new Error(data.message||'OTP verification failed');
         showFormSuccess('signupForm', data.message);
         // auto-login to get JWT so protected pages work
-        const loginRes = await fetch('http://localhost:5000/api/auth/login', {
+        const loginRes = await fetch('https://final-project-production-13f4.up.railway.app/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -202,7 +202,7 @@ document.getElementById('resendOtpBtn').addEventListener('click', async function
         signupLoading.style.display='block';
         signupFormElement.querySelectorAll('input,button').forEach(el=>el.disabled=true);
 
-        const res = await fetch('http://localhost:5000/api/auth/signup',{
+        const res = await fetch('https://final-project-production-13f4.up.railway.app/api/auth/signup',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({name,email,password})

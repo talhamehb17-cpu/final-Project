@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('nighthowls_admin_token');
     if (token) {
         // Verify token
-       fetch('http://localhost:5000/api/admin/verify', {
+       fetch('https://final-project-production-13f4.up.railway.app/api/admin/verify', {
        headers: {
         'Authorization': `Bearer ${token}`
         }
@@ -54,7 +54,7 @@ adminLoginForm.addEventListener('submit', async (e) => {
     adminLoginError.style.display = 'none';
     
 try {
-    const response = await fetch('http://localhost:5000/api/admin/login', {
+    const response = await fetch('https://final-project-production-13f4.up.railway.app/api/admin/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

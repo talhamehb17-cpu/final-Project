@@ -2,7 +2,7 @@
 
 // Use localhost for local development, fallback to IP if needed
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-  ? 'http://localhost:5000/api'
+  ? 'https://final-project-production-13f4.up.railway.app/api'
   : `http://${window.location.hostname}:5000/api`;
 
 // DOM Elements
