@@ -1,7 +1,7 @@
-const Resend = require('resend');
+const Resend = require("resend");
 
 if (!process.env.RESEND_API_KEY) {
-    console.warn('[Email Service] WARNING: RESEND_API_KEY is not set');
+    console.warn("[Email Service] WARNING: RESEND_API_KEY is not set");
 }
 
 const resend = new Resend(process.env.RESEND_API_KEY);
