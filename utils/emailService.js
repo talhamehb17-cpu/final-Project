@@ -37,9 +37,11 @@ async function sendEmail({ to, from, subject, html, text, attachments = [] }) {
 
         console.log(`[Email Service] Sending email to: ${Array.isArray(to) ? to.join(', ') : to}`);
         
-        const response = await resend.emails.send(emailData);
-        console.log(`[Email Service] Email sent successfully: ${response.id}`);
-        return response;
+      const response = await resend.emails.send(emailData);
+
+      console.log("RESEND RESPONSE:", JSON.stringify(response, null, 2));
+
+      return response;
     } catch (error) {
         console.error('[Email Service] Email send failed:', error);
         throw error;
