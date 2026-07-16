@@ -1,7 +1,7 @@
 const express = require('express');
 const { pool } = require('../db/pg');
 const { requireAuth } = require('../middleware/auth');
-const transporter = require('../utils/emailTransporter');
+const { sendEmail } = require('../utils/emailService');
 const User = require('../models/User');
 const { orderCustomerEmailHtml, orderOwnerEmailHtml } = require('../utils/emails');
 const multer = require('multer');
@@ -59,8 +59,8 @@ router.post('/', requireAuth, upload.single('payment_screenshot'), async (req, r
     const userId = req.user.id;
     const paymentMethod = req.body.payment_method || 'COD';
     const brandName = process.env.BRAND_NAME || 'Nighthowls';
-    const ownerEmail = process.env.ORDER_NOTIFY_TO || process.env.EMAIL_USER;
-    const supportEmail = process.env.SUPPORT_EMAIL || process.env.EMAIL_USER;
+    const ownerEmail = process.env.ORDER_NOTIFY_TO || process.env.EMAIL_FROM || 'onboarding@resend.dev';
+    const supportEmail = process.env.SUPPORT_EMAIL || process.env.EMAIL_FROM || 'onboarding@resend.dev';
     const supportPhone = process.env.SUPPORT_PHONE || process.env.PHONE;
     const paymentScreenshot = req.file; // Screenshot from multer
 
@@ -251,7 +251,7 @@ router.post('/', requireAuth, upload.single('payment_screenshot'), async (req, r
     await client.query('commit');
 
     // Send order emails in background (never fail the order if email fails)
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS && ownerEmail) {
+    if (process.env.RESEND_API_KEY && ownerEmail) {
       const createdAt = new Date();
       const deliveryText = `Your order will be delivered in ${DELIVERY_ETA_DAYS} days (1 week).`;
       const deliveryDate = estimatedDeliveryDate.toISOString().slice(0, 10);
@@ -271,8 +271,8 @@ router.post('/', requireAuth, upload.single('payment_screenshot'), async (req, r
       Promise.resolve().then(async () => {
         try {
           // Owner copy
-          await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+          await sendEmail({
+            from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
             to: ownerEmail,
             subject: `New Order Received - ${paymentMethod}`,
             html: orderOwnerEmailHtml({
@@ -294,14 +294,13 @@ router.post('/', requireAuth, upload.single('payment_screenshot'), async (req, r
               promoCode: appliedPromoCode,
               discountPercentage: discountPercentage * 100,
               status: 'pending'
-            }),
-            attachments: ownerAttachments
+            })
           });
 
-          // Customer copy (NO screenshot attachment)
+          // Customer copy
           if (loginEmail) {
-            await transporter.sendMail({
-              from: process.env.EMAIL_USER,
+            await sendEmail({
+              from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
               to: loginEmail,
               subject: 'Thank You for Shopping with Us!',
               html: orderCustomerEmailHtml({
@@ -321,8 +320,8 @@ router.post('/', requireAuth, upload.single('payment_screenshot'), async (req, r
                 contactPhone: supportPhone,
                 paymentMethod,
                 promoCode: appliedPromoCode,
-                discountPercentage: discountPercentage * 100,
-                status: 'pending'
+              discountPercentage: discountPercentage * 100,
+              status: 'pending'
               })
             });
           }

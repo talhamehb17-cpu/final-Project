@@ -1,6 +1,6 @@
 const express = require('express');
 const ContactMessage = require('../models/ContactMessage');
-const transporter = require('../utils/emailTransporter');
+const { sendEmail } = require('../utils/emailService');
 const { sanitizeName, sanitizeEmail, sanitizeString } = require('../utils/sanitize');
 
 const router = express.Router();
@@ -29,16 +29,18 @@ router.post('/', async (req, res) => {
       message: sanitizedMessage
     });
 
-    // Optional: notify store inbox. Never fail the request if SMTP fails.
-    const notifyTo = process.env.CONTACT_NOTIFY_TO || process.env.EMAIL_USER;
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS && notifyTo) {
+    // Optional: notify store inbox. Never fail the request if email fails.
+    const notifyTo = process.env.CONTACT_NOTIFY_TO || process.env.EMAIL_FROM || 'onboarding@resend.dev';
+    if (process.env.RESEND_API_KEY && notifyTo) {
       try {
-        await transporter.sendMail({
-          from: process.env.EMAIL_USER,
+        await sendEmail({
+          from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
           to: notifyTo,
-          replyTo: sanitizedEmail,
           subject: `New contact message from ${sanitizedName}`,
-          text: `Name: ${sanitizedName}\nEmail: ${sanitizedEmail}\n\nMessage:\n${sanitizedMessage}\n`
+          html: `<p><strong>Name:</strong> ${sanitizedName}</p>
+                 <p><strong>Email:</strong> ${sanitizedEmail}</p>
+                 <p><strong>Message:</strong></p>
+                 <p>${sanitizedMessage}</p>`
         });
       } catch (mailErr) {
         console.log('Contact email send failed:', mailErr?.message || mailErr);

@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const { hashPassword, comparePassword } = require('../utils/hash');
 const { generateOTP } = require('../utils/otp');
-const transporter = require('../utils/emailTransporter');
+const { sendEmail } = require('../utils/emailService');
 const jwt = require('jsonwebtoken');
 const { sanitizeName, sanitizeEmail, sanitizeString } = require('../utils/sanitize');
 const { authLimiter, loginLimiter } = require('../middleware/rateLimit');
@@ -52,8 +52,8 @@ router.post('/signup', authLimiter, async (req, res) => {
 
         // Send OTP email with proper error handling
         try {
-            await transporter.sendMail({
-                from: process.env.EMAIL_USER,
+            await sendEmail({
+                from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
                 to: email,
                 subject: 'Verify your Nighthowls account',
                 html: `<p>Hello ${name},</p>

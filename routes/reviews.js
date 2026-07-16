@@ -2,7 +2,7 @@ const express = require('express');
 const { pool } = require('../db/pg');
 const { requireAuth } = require('../middleware/auth');
 const User = require('../models/User');
-const transporter = require('../utils/emailTransporter');
+const { sendEmail } = require('../utils/emailService');
 const { sanitizeName, sanitizeString, sanitizeNumber } = require('../utils/sanitize');
 
 const router = express.Router();
@@ -59,14 +59,17 @@ router.post('/', requireAuth, async (req, res) => {
     );
 
     // Optional owner notification
-    const ownerEmail = process.env.REVIEW_NOTIFY_TO || process.env.EMAIL_USER;
-    if (process.env.EMAIL_USER && process.env.EMAIL_PASS && ownerEmail) {
+    const ownerEmail = process.env.REVIEW_NOTIFY_TO || process.env.EMAIL_FROM || 'onboarding@resend.dev';
+    if (process.env.RESEND_API_KEY && ownerEmail) {
       try {
-        await transporter.sendMail({
-          from: process.env.EMAIL_USER,
+        await sendEmail({
+          from: process.env.EMAIL_FROM || 'onboarding@resend.dev',
           to: ownerEmail,
           subject: `New review by ${sanitizedName}`,
-          text: `Reviewer: ${sanitizedName}${sanitizedEmail ? ` (${sanitizedEmail})` : ''}\nRating: ${ratingNum}\n\n${sanitizedText}`
+          html: `<p><strong>Reviewer:</strong> ${sanitizedName}${sanitizedEmail ? ` (${sanitizedEmail})` : ''}</p>
+                 <p><strong>Rating:</strong> ${ratingNum}/5</p>
+                 <p><strong>Review:</strong></p>
+                 <p>${sanitizedText}</p>`
         });
       } catch (e) {
         console.log('Review email failed:', e?.message || e);
