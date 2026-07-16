@@ -6,12 +6,17 @@ if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
 
 // Shared nodemailer transporter instance
 const transporter = nodemailer.createTransport({
-    pool: true, // Enable connection pooling to speed up handshake latency
-    service: 'gmail',
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    pool: true,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-    }
+    },
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 10000
 });
 
 module.exports = transporter;
